@@ -13,24 +13,25 @@ class AWF_GLOBALS:
     # SET TO FALSE TO KEEP AFTER SCRIPT EXIT
     BURN_AFTER_READING = True
 
+    # Cams object
     cams = {}
 
+    # Kills the spinning updater thread if set to True.
     exit_thread = False
 
+    # Amount in seconds between grabbing the latest config file from awf server.
     update_frequency_seconds = 5
 
+    # Updater Thread
     updater_thread = None
 
+    # Redundancy as logging is not setup yet.
     logger = None
-
-    class tesseract:
-        # Tesseract OCR timeout
-        # A timeout should be considered fatal, this shouldn't happen.
-        timeout = 8
 
 # THE ESSENTIALS
 class Essentials:
     
+    # BASE URL
     base_url = "http://s3-us-west-2.amazonaws.com/alertwildfire-data-public"
 
     # HEADERS
