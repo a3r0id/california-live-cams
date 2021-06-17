@@ -47,8 +47,16 @@ if __name__ == '__main__':
 
 ```
 
+## Preview:
+
+![](https://raw.githubusercontent.com/hostinfodev/california-live-cams/main/modules/AlertWildfireOrg/preview.png)
+
+
+------------------------------------------------
+------------------------------------------------
+
 ## Caltrans & DOT
-This is a collection of ALL of the Department Of Transportation's highway cams, in cooperation with Caltrans.
+This is a collection of ALL of the Department Of Transportation's highway cams located in the state of California, in cooperation with Caltrans.
 While there is also live-video feeds selectively available, I have not added a streaming capability to the module yet but plan to in the near future.
 I did not add a search/query feature to this module as my main focus is around Wildfire detection. 
 
@@ -93,6 +101,16 @@ while True:
         remove(filename)
 
 ```
+
+## Preview:
+
+![](https://raw.githubusercontent.com/hostinfodev/california-live-cams/main/modules/CaltransDot/preview.png)
+
+
+
+------------------------------------------------
+------------------------------------------------
+
 
 ## Notes
 
