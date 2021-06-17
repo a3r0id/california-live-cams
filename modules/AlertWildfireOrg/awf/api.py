@@ -5,13 +5,16 @@ from time import time
 import logging
 class AWF(object):
     
+    # Constructor
     def __init__(self):   
         self.session_id                               = nonce()
         AWF_GLOBALS.sessions[self.session_id]         = {"download_cache": [], "alive": True}
 
+    # Gets current downloads manifest
     def downloads(self):
         return AWF_GLOBALS.sessions[self.session_id]['download_cache']
 
+    # Gets a download object from downloads manifest by download ID.
     def fromDownloads(self, id):
         session = self.get_session()
         for download in session['download_cache']:
@@ -19,20 +22,25 @@ class AWF(object):
                 return download
         return None
 
+    # Gets the session object from manifest
     def getSession(self):
         return AWF_GLOBALS.sessions[self.session_id]
-
+    
+    # Searches manifest for cams by ID. Not really useful unless you know exaclty what cam you are looking for.
+    # Appends to downloads by default if found.
     def fetchByID(self, id, **kwargs):
         return self.fetchByProp("id", id, kwargs)
-    
+
+    ### NOTE: ###    
+    # ALL SEARCHES ARE AGAINST EACH CAM'S "properties" OBJECT.
+    # Try iterating over your global "cams" objects then using "print(cam['properties'])" for each cam to give yourself some clarification of whats under the hood. 
+
+    # Fetch by property key/value. Accepts {"key" => string, int or list}
+    # download: If True, downloads each found cam's latest image and appends the download info to the downloads object.
+    # timestamp: (datetime object) Overrides the current datetime and attempts to search for older imagery. 
+    # distance: (Kilometers, int) If searching by "field off view" (example: "fov_center" => ['-122.492152', '39.181985']),
+    # you can set an acceptable range so if distance is set to 20km, all results within 20km of ['-122.492152', '39.181985'] will be returned.
     def fetchByProp(self, key, value, download=False, timestamp=None, distance=None):
-        
-        """
-        > download: Download image if match found.
-        > timestamp: Sets image timestamp if download is enabled.
-        > distance: For use only if search value is a lat/long array (possible keys: "").
-        Sets search distance (km).
-        """
         
         if not AWF_GLOBALS.cams:
             AWF_GLOBALS.LOCK.acquire()
