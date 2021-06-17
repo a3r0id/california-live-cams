@@ -1,5 +1,5 @@
 # california-live-cams
- A collection of modules that I have created to programmatically saerch for/download imagery from all publicly available live cam feeds across the state of California. In no way am I affiliated with any of these organizations and these modules/methods of gathering imagery are completely unofficial.
+ A collection of modules that I have created to programmatically search for/download imagery from all publicly available live cam feeds across the state of California. In no way am I affiliated with any of these organizations and these modules/methods of gathering imagery are completely unofficial.
  
  Initially, I wanted to create a fire-detection engine using Haar-Cascade classifiers but due to each image containing a logo, the project requires further problem-solving. I hope these modules help someone else in the meantime!
 
