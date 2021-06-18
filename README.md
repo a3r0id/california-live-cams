@@ -3,11 +3,11 @@
  
  Initially, I wanted to create a fire-detection engine using Haar-Cascade classifiers but due to each image containing a logo, the project requires further problem-solving. I hope these modules help someone else in the meantime!
 
- Note: Each image consistently contains a black footer that contains data. Tesseract-OCR engine flawlessly detects the text in the black bar each time which might be very useful to someone.
-
 ## Alertwildfire.org
 This is a very robust module as it contains search features and a querying system that returns results in a JSON object.
 Aside from California, AWF also has cams in Oregon, Washington, Idaho, Nevada & Utah.
+
+Note: Each image consistently contains a black footer that contains data. Tesseract-OCR engine flawlessly detects the text in the black bar each time which might be very useful to someone.
 
 [Source: alertwildfire.org](http://www.alertwildfire.org/)
 
